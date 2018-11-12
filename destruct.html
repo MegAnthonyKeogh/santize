@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            first: 'Megan',
+            last: 'Keogh',
+            country: 'USA',
+            city: 'Philly',
+            twitter: '@MegAnthonyKeogh'
+        };
+
+        const { first, last } = person; 
+        //destructuring this says give me 2 top level variables first and last from the person object 
+
+
+        const megan = {
+            first: 'Meg',
+            Last: 'Keogh',
+            links: {
+                social:{
+                    twitter: 'https://twitter.com/MegAnthonyKeogh',
+                    facebook: 'https://github.com/MegAnthonyKeogh'
+                }
+            }
+        }
+       // const twitter = megan.links.social.twitter;
+       // const facebook = megan.links.social.facebook;
+
+       const { twitter:tweet, facebook:fb } = megan.links.social;
+       //you can rename the keys to the variable name you want this way.
+       //this is great for when you are destructuring from an API and you don't like the names they use.
+       //or if you have the key values with the same name like in this example. 
+
+       const settings = { width: 300, color: 'black'} //fontSize and color;
+       const { width = 100, height = 100, color = 'blue', fontSize = 25 } = settings;
+       //this lets you set default values in case when you're destructuring from an object that doesn't reset all the values. You won't get an undefined problem.  
+
+
+    </script>
+    
+</body>
+</html>

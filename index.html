@@ -20,10 +20,11 @@
         // not case insensitive.
 
         //.endsWith()
+        // can use this and pass 2 arguments, the second argument is the spaces from the beginning where you're looking for the characters. Can do this with starts with as well 
 
-        //.includes()
+        //.includes() if the characters are anywhere in the code
 
-        //.repeat()
+        //.repeat() self explanatory see function below
 
         function leftPad(str, length = 20) {
             return `=> ${' '.repeat(length - str.length)}${str}`;
