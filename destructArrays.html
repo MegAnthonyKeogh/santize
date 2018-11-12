@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const details = ['Meg Antknee', 76, 'megananthony@gmail.com'];
+       // const name = details[0];
+       // const id = details[1];
+      //  const email = [details[2];
+      //the above is awful, do what I did below
+
+      const [ name, id, email] = details;
+      //when you destructure with arrays you use [], becuase it's not an object. duh. 
+      console.log(name, id, email);
+      const data = 'Basketball,Sports,901210,23';
+      //data.split(',');
+      const [itemName, category, sku, inventory] = data.split(',');
+      console.log( itemName, category, sku, inventory);
+
+      //destructuring arrays and using ...rest 
+        const team = ['Meg', 'Bob', 'Katie', 'Erin', 'Ellie', 'Jack'];
+
+        const [ captain, assistant, ...players] = team;
+
+        console.log(captain, assistant, players);
+        //... makes sure the other values and not just the first value get included in the last variable name. 
+
+
+
+
+
+    </script>
+
+</body>
+</html>
