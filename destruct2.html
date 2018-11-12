@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//object destructuing with variable renaming and defaults
+
+const { w: width = 400, h: height = 500} = { w: 800}
+
+//what's happening here? 
+//'w' & 'h' are being rename to 'width' and 'height'
+// only width is getting reset to 800, since there is not a height option, it goes to the default 500. 
+
+    </script>
+</body>
+</html>
