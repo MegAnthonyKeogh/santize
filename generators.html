@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function* listPeople(){
+        yield 'meg';
+        yield 'bob';
+        yield 'El'
+       
+    }
+
+    const people = listPeople();
+
+    function* num(){
+        let i = 0;
+        yield i;
+        i++;
+        yield i;
+        i++;
+        yield i;
+    }
+
+    const counter = num();
+   // how are generators different from a regular function?
+   // they have the star and yield key word. 
+   // you have to call people.next(); for the value and you'll get the next time. It's like stopping and starting the code. 
+
+   const inventors = [
+    { first: 'Albert', last: 'Einstein', year: 1879 },
+    { first: 'Isaac', last: 'Newton', year: 1643 },
+    { first: 'Galileo', last: 'Galilei', year: 1564 },
+    { first: 'Marie', last: 'Curie', year: 1867 },
+    { first: 'Johannes', last: 'Kepler', year: 1571 },
+    { first: 'Nicolaus', last: 'Copernicus', year: 1473 },
+    { first: 'Max', last: 'Planck', year: 1858 },
+  ];
+
+  function* loop(arr){
+      for (const item of arr){
+          yield item;
+      }
+  }
+
+  const inventorGen = loop(inventors);
+
+
+
+    </script>
+</body>
+</html>
