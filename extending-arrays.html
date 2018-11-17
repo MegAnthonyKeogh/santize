@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class MovieCollection extends Array {
+        constructor(name, ...items){
+            super(...items) //after we capture the items with a ...rest, we need to push them as separate items with a ...spread otherwise we will get an array in an arry. 
+            this.name = name;
+        }
+        add(movie){
+            this.push(movie);
+            return movies;
+        }
+        topRated(limit = 10) {
+            return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+        }
+    }
+    const movies = new MovieCollection('Meg\'s favorite movies',
+    {name: 'Titanic', stars: 3},
+    {name: 'The kissing booth', stars: 7},
+    {name: 'To all the boys I loved before', stars: 9},
+    {name: 'Goodfellas', stars: 5}
+    )
+    
+
+    movies.add({name: 'Star Wars Trek', stars: 6});
+
+    </script>
+</body>
+</html>
