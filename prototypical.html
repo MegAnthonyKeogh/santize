@@ -8,21 +8,45 @@
 </head>
 <body>
     <script>
-        function Dog(name, breed) {
-            this.name = name;
-            this.breed = breed;
-        }
+        //when you build a class you need at least one function and that is a constructor function. 
+        //constuctor() is all you need
+
+        //static methods only live on the mamma constructor function not on the instances of the constructor
+
+         class Dog {
+             constructor(name, breed){
+                 this.name = name;
+                 this.breed = breed;
+
+             }
+             bark(){
+                console.log(`Bark bark! My name is ${this.name}`)
+             }
+             cuddle(){
+                console.log(`I love you owner!`);
+             }
+             static info(){
+                 console.log('A dog is way better than a cat');
+             }
+             get description(){
+                 return `${this.name} is a ${this.breed} type of dog`;
+             }
+             set nicknames(value) {
+                 this.nick = value.trim();
+                 //can't say this.nicknames because its used as a setter variable already. 
+             }
+             get nicknames(){
+                 return this.nick.toUpperCase();
+                 // if you want to see the nickname given, you have to retrieve it with a get method
+             }
+       
+         }
 
         const snickers = new Dog('snickers', 'King Charles');
         const sunny = new Dog('Sunny', 'Golden Doodle');
 
-        Dog.prototype.bark = function(){
-            console.log(`Bark bark! My name is ${this.name}`);
-        }
 
-        Dog.prototype.cuddle = function(){
-            console.log(`I love you owner!`);
-        }
+    
     </script>
 </body>
 </html>

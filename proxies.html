@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // proxies help you override properties in objects the default behavior 
+    //proxies take 2 things. 1st is the target, 2nd is the handler 
+    //a function in the handler is called a trap. you can set multiple traps inside your handler. MDN has a bunch you can use. 
+    // the get and the set are traps
+
+    const person = {name: 'meg', age: 100};
+    // the target here is person. 
+    const personProxy = new Proxy(person, {
+        get(target, name){
+           // console.log('someone is asking for', target, name);
+           return target[name].toUpperCase();
+        },
+        set(target, name, value){
+            if(typeof value === 'string'){
+                target[name]= value.trim().toUpperCase();
+            }
+        }
+    });
+
+    personProxy.name = 'Megan';
+
+    const phoneHandler = {
+        set(target, name, value) {
+            // removes the weird spacing and characters
+            target[name] = value.match(/[0-9]/g).join('')
+        },
+        get(target, name){
+            return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+        }
+    }
+         // the target is an empty object because we do not have objects when we begin. 
+          
+    const phoneNumbers = new Proxy({}, phoneHandler)
+
+
+
+    
+    </script>
+</body>
+</html>
