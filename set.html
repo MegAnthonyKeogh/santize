@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
 </head>
 <body>
     <script>
@@ -26,7 +25,25 @@
 
 
         const students = new Set(['Erin', 'Katie', 'Lee', 'Drew']);
+        
+        //sets are value with reservations
+        const brunch = new Set();
 
+        brunch.add('wes');
+        brunch.add('sarah');
+        brunch.add('tim');
+
+        const line = brunch.values();
+        console.log(line.next().value);
+        console.log(line.next().value);
+        brunch.add('erry');
+        brunch.add('katie');
+        console.log(line.next().value);
+        console.log(line.next().value);
+        console.log(line.next().value);
+        brunch.add('bob');
+
+        //it doesn't matter when you add to it, it just does it and the function doesnt lose it's place while iterating. 
 
     
     </script>
